@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@types/amap-js-api": "^1.4.16"
+  }
+}
