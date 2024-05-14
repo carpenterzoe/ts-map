@@ -3,6 +3,7 @@ interface Mappable {
     lat: number;
     lng: number;
   }
+  markerContent(): string;
 }
 export class CustomMap {
   // public aMap: AMap.Map;
@@ -27,6 +28,15 @@ export class CustomMap {
     const marker = new AMap.Marker({
       position,
     });
+
+
+    const infoWindow = new AMap.InfoWindow({
+      content:mappable.markerContent()
+    })
+
+    marker.on('click', () => {
+      infoWindow.open(this.aMap, position)
+    })
 
     this.aMap.add(marker)
   }
